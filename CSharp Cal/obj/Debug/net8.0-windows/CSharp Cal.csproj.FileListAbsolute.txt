@@ -1,0 +1,16 @@
+D:\My Projects\CSharp Cal\CSharp Cal\bin\Debug\net8.0-windows\CSharp Cal.exe
+D:\My Projects\CSharp Cal\CSharp Cal\bin\Debug\net8.0-windows\CSharp Cal.deps.json
+D:\My Projects\CSharp Cal\CSharp Cal\bin\Debug\net8.0-windows\CSharp Cal.runtimeconfig.json
+D:\My Projects\CSharp Cal\CSharp Cal\bin\Debug\net8.0-windows\CSharp Cal.dll
+D:\My Projects\CSharp Cal\CSharp Cal\bin\Debug\net8.0-windows\CSharp Cal.pdb
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.csproj.GenerateResource.cache
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.AssemblyInfoInputs.cache
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.AssemblyInfo.cs
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.csproj.CoreCompileInputs.cache
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.dll
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\refint\CSharp Cal.dll
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.pdb
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp Cal.genruntimeconfig.cache
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\ref\CSharp Cal.dll
+D:\My Projects\CSharp Cal\CSharp Cal\obj\Debug\net8.0-windows\CSharp_Cal.Calculator.resources
