@@ -42,7 +42,7 @@ Features ✅
 
 Screenshots / Demo 📸
 ---------------------
-Add screenshots to assets/ and replace the placeholder below:
+
 ![Calculator Screenshot](./image1.png)  
 
 
