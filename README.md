@@ -1,246 +1,187 @@
-# 🧮 Net8CalcApp
+# 🧮✨ Net8CalcApp — .NET 8 Calculator (Decorated) 🚀
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/Achintha-999/Net8CalcApp?color=blue)](https://github.com/Achintha-999/Net8CalcApp)
-[![Language: C#](https://img.shields.io/badge/language-C%23-blue?logo=csharp)](https://docs.microsoft.com/dotnet/csharp/)
-[![Platform: Windows](https://img.shields.io/badge/platform-windows-lightgrey?logo=windows)](https://www.microsoft.com/windows)
-[![Target: .NET 8](https://img.shields.io/badge/.NET-8.0-512bd4?logo=.net)](https://dotnet.microsoft.com/)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Achintha-999/Net8CalcApp?color=blue)](https://github.com/Achintha-999/Net8CalcApp)  
+[![Language: C#](https://img.shields.io/badge/language-C%23-blue?logo=csharp)](https://docs.microsoft.com/dotnet/csharp/)  
+[![Platform: Windows](https://img.shields.io/badge/platform-windows-lightgrey?logo=windows)](https://www.microsoft.com/windows)  
+[![Target: .NET 8](https://img.shields.io/badge/.NET-8.0-512bd4?logo=.net)](https://dotnet.microsoft.com/)  
 [![Issues](https://img.shields.io/github/issues/Achintha-999/Net8CalcApp)](https://github.com/Achintha-999/Net8CalcApp/issues)
 
-A simple and intuitive calculator application built with C# and Windows Forms, targeting .NET 8.0. This project demonstrates basic arithmetic operations and a user-friendly interface for learning and practical use.
+✨ A simple and intuitive calculator application built with C# and Windows Forms, targeting .NET 8.0. This project demonstrates basic arithmetic operations and a user-friendly interface for learning and practical use.
 
 ---
 
-Table of Contents
-- About
-- Demo / Screenshots
-- Features
-- How it works (architecture & flow)
-- Requirements
-- Installation & Quick Start
-- Usage
-- Design & UI
-- Implementation notes
-- Tests & Quality
-- Contributing
-- Roadmap / TODO
-- License
-- Acknowledgements
+Contents
+- 🧾 About
+- 🎯 Features
+- 📐 Design & UI
+- ⚙️ How it works
+- 🧩 Requirements
+- 🚀 Installation & Quick Start
+- 🧭 Usage
+- 🧪 Testing & Quality
+- 🤝 Contributing
+- 📅 Roadmap
+- 📝 License
+- 🙏 Acknowledgements
 
 ---
 
-About
------
-Net8CalcApp is a small Windows Forms calculator application intended as an educational example of building a desktop GUI app with .NET 8 and C#. It focuses on clarity, simplicity, and useful core calculator functionality.
-
-Features
+About 🧾
 --------
-- ✅ Basic arithmetic: add, subtract, multiply, divide
-- ✅ Decimal numbers and chaining operations
-- ✅ Clear (C) and All Clear (AC)
-- ✅ Backspace / delete last digit
-- ✅ Keyboard support (digits, + - * /, Enter, Backspace)
-- ✅ Simple, readable UI implemented in WinForms
+Net8CalcApp is an educational Windows Forms calculator built with .NET 8 and C#. Clean, compact, and easy to read — great for learning desktop UI and application logic.
 
-Demo / Screenshots
-------------------
-> Add real screenshots to repository at `assets/screenshot-*.png` and update these links.
+Features ✅
+---------
+- 🔢 Basic arithmetic: Add, Subtract, Multiply, Divide
+- 🔁 Chaining operations (left-to-right)
+- 🔸 Decimal support
+- 🧹 AC (All Clear) and C (Clear entry)
+- ⌫ Backspace / delete last digit
+- ⌨️ Keyboard input support (numbers, + - * /, Enter, Backspace)
+- 🎨 Simple, modern WinForms UI with accessibility in mind
 
-- Main window (placeholder)
-  ![Calculator Screenshot](assets/screenshot-1.png)
+Screenshots / Demo 📸
+---------------------
+Add screenshots to assets/ and replace the placeholder below:
+![Calculator Screenshot](assets/screenshot-1.png)  
+(Drag your images into assets/ and update these links to show your UI.)
 
-How it works — high-level
--------------------------
-Net8CalcApp uses an event-driven Windows Forms UI with a small "Calculator Engine" responsible for holding the current state and performing numeric operations.
+Design & UI 🎨
+-------------
+Visual goals:
+- High contrast display for numbers and results 🔦
+- Large, tappable buttons for mouse or touch 🖱️🖐️
+- Clear operator coloring for fast recognition 🎯
 
-Flow (user perspective):
-1. User clicks or types digits → UI appends digits to the display.
-2. User chooses an operator (+, -, ×, ÷) → Engine stores current value and operator.
-3. User inputs the next number and presses = → Engine computes using stored value, operator, and current input, then displays the result.
-4. Special buttons (C, AC, ←) manipulate display or engine state.
+Suggested layout:
+- Display row (result + smaller history)
+- Button grid:
+  - Row 1: AC | C | ⌫ | ÷
+  - Row 2: 7 | 8 | 9 | ×
+  - Row 3: 4 | 5 | 6 | −
+  - Row 4: 1 | 2 | 3 | +
+  - Row 5: ± | 0 | . | =
 
-Core components (typical)
-- Program.cs: application entry point (Application.Run(MainForm)).
-- MainForm.cs (WinForms): UI layout, button click / key press handlers.
-- CalculatorEngine.cs: pure logic class that performs calculations and maintains state (currentValue, pendingOperator, inputBuffer, hasDecimal).
-- Resources/Assets: icons and screenshots.
+Pro tip: Use decimal type for calculation logic to reduce floating-point surprises 🧮
 
-Simplified architecture (ASCII)
-- UI (MainForm)  <---->  CalculatorEngine
-     ^  event handlers         ^  stateless math operations & state machine
-     |                         |
-  Keyboard input             Calculation methods
+How it works — high-level ⚙️
+---------------------------
+Event-driven WinForms app using a small CalculatorEngine (separate class) for logic. The UI sends user input to the engine; the engine maintains state and returns formatted text for the display.
 
-CalculatorEngine responsibilities
-- Accept numeric input append/pop
-- Handle unary/binary operations and operator precedence (simple left-to-right for basic calculator)
-- Validate divide-by-zero
-- Normalize rounding/precision for display
-- Provide formatted string for UI display
+Flow:
+1. User enters digits → UI appends to current input
+2. Operator selected → engine stores previous value & operator
+3. User enters next number and presses = → engine computes result & returns display string
+4. Special operations (AC, C, ←) update engine/UI accordingly
 
-Requirements
-------------
-- OS: Windows (Windows Forms desktop)
-- .NET SDK: .NET 8.0 (recommended)
-  - https://dotnet.microsoft.com/download/dotnet/8.0
-- IDE (recommended):
-  - Visual Studio 2022/2023 with .NET Desktop Development workload OR
-  - JetBrains Rider OR
-  - Visual Studio Code (with C# extension; Windows Forms designer not available)
-- Hardware: any modern PC capable of running Windows & .NET apps
+Core components:
+- Program.cs — application entry point 🏁
+- MainForm.cs — UI and event handlers 🖥️
+- CalculatorEngine.cs — pure arithmetic & state (unit-testable) 🧩
+- assets/ — icons, screenshots, optional themes 🎨
 
-Installation & Quick Start
---------------------------
-Clone repository
-```bash
-git clone https://github.com/Achintha-999/Net8CalcApp.git
-cd Net8CalcApp
-```
-
-Open and run
-- Visual Studio
-  - Open the solution (.sln) or project (.csproj).
-  - Press F5 to build and run.
-
-- dotnet CLI (if project is a SDK-style WinForms project)
-  - Build:
-    ```
-    dotnet build
-    ```
-  - Run from the project folder:
-    ```
-    dotnet run --framework net8.0
-    ```
-  Note: Running WinForms via dotnet CLI works on Windows; ensure your project file targets `UseWindowsForms` and `TargetFramework` net8.0.
-
-Usage
------
-Buttons:
-- 0–9 : digits
-- . : decimal point
-- +, −, ×, ÷ : operators
-- = or Enter : evaluate
-- AC : all clear (reset)
-- C : clear current entry
-- ← or Backspace : delete last digit
-
-Keyboard shortcuts:
-- Numbers: direct numeric keys
-- + - * / : operator keys
-- Enter = Evaluate
-- Backspace = Delete last digit
-- Escape = AC (optional: if implemented)
-
-Design & UI
------------
-Visual goals
-- Clean, high-contrast display area for current input and result.
-- Large buttons arranged 4x5 grid for easy clicking.
-- Clear typography for numbers and operators.
-
-Layout suggestion (grid)
-- Display row: large single-line label
-- Row 1: AC | C | ← | ÷
-- Row 2: 7 | 8 | 9 | ×
-- Row 3: 4 | 5 | 6 | −
-- Row 4: 1 | 2 | 3 | +
-- Row 5: ± | 0 | . | =
-
-Colors & binding
-- Primary color for operators for emphasis.
-- Neutral background and rounded button shapes.
-- Buttons implement MouseDown/Click with short press animation (optional).
-
-Implementation notes & best practices
------------------------------------
-- Keep CalculatorEngine logic separated from UI so it can be unit-tested.
-- Avoid floating point rounding surprises: consider using decimal for monetary-like precision.
-- Sanitize input to avoid multiple decimals in the same number.
-- Handle divide-by-zero gracefully (display "Error" or "∞" and lock until AC).
-
-Example pseudo-code for calculator logic
+Example logic (simplified)
 ```csharp
 public class CalculatorEngine {
     private decimal? storedValue = null;
     private string pendingOp = null;
     private string input = "0";
 
-    public void EnterDigit(char digit) { /* append or replace input */ }
-    public void EnterDecimalPoint() { /* allow only once */ }
-    public void SetOperator(string op) {
-        if (storedValue == null) storedValue = decimal.Parse(input);
-        else storedValue = Compute(storedValue.Value, decimal.Parse(input), pendingOp);
-        pendingOp = op;
-        input = "0";
-    }
-    public string Evaluate() {
-        if (pendingOp != null && storedValue != null) {
-            var result = Compute(storedValue.Value, decimal.Parse(input), pendingOp);
-            ClearStateKeepResult(result);
-            return result.ToString();
-        }
-        return input;
-    }
-    private decimal Compute(decimal a, decimal b, string op) { /* + - * / with checks */ }
+    public void EnterDigit(char d) { /* append safely */ }
+    public void EnterDecimalPoint() { /* only once */ }
+    public void SetOperator(string op) { /* compute or queue */ }
+    public string Evaluate() { /* compute final result */ }
+    private decimal Compute(decimal a, decimal b, string op) { /* + - * / */ }
 }
 ```
 
-Testing & Quality
------------------
-- Add unit tests for CalculatorEngine:
-  - Simple operations: 2+2=4, 6/3=2
-  - Chained operations: 2+3×4 (depending on precedence support)
-  - Decimal behavior: 0.1+0.2 (use decimal to avoid binary float surprises)
-  - Divide-by-zero handling
+Requirements 🧩
+--------------
+- OS: Windows (WinForms)
+- .NET SDK: .NET 8.0 (https://dotnet.microsoft.com/download/dotnet/8.0)
+- IDE: Visual Studio (recommended) / Rider / VS Code (no visual WinForms designer)
+- Hardware: Any modern Windows-capable PC
 
-- Manual UI tests:
-  - Keyboard input
-  - Button clicks
-  - Edge cases (long input, repeated equals, operator change mid-entry)
+Installation & Quick Start 🚀
+---------------------------
+Clone:
+```bash
+git clone https://github.com/Achintha-999/Net8CalcApp.git
+cd Net8CalcApp
+```
 
-Contributing
-------------
-Contributions are welcome! Suggested workflow:
-1. Fork the repo
-2. Create a feature branch (feature/clear-history or fix/bug-name)
-3. Commit changes with clear message
-4. Open a Pull Request describing the change and why it helps
+Open & run:
+- Visual Studio: Open solution or .csproj → F5
+- dotnet CLI:
+  ```bash
+  dotnet build
+  dotnet run --framework net8.0
+  ```
+Note: WinForms requires UseWindowsForms in the project file and Windows OS.
 
-When opening issues, please include:
-- Steps to reproduce (if bug)
-- Expected behavior vs actual behavior
-- Screenshots or logs (if available)
+Usage 🧭
+------
+- 0–9: digits
+- . : decimal point
+- + − × ÷ : operators
+- = or Enter : evaluate
+- AC : all clear
+- C : clear current entry
+- ← or Backspace : delete last digit
+- Escape : (optional) AC
+
+Accessibility tip: ensure button tab order and provide keyboard shortcuts for the basic controls ♿
+
+Testing & Quality 🧪
+-------------------
+- Unit-test the CalculatorEngine (recommended frameworks: xUnit / MSTest / NUnit)
+  - Basic math: 2+2=4, 6/3=2 ✅
+  - Decimal checks: 0.1+0.2 (use decimal) 🔎
+  - Divide-by-zero handling (show "Error" or similar) ⚠️
+- UI smoke tests:
+  - Keyboard input, clicking, edge cases
+
+Contributing 🤝
+--------------
+Contributions welcome! Please:
+1. Fork the repo 🍴
+2. Create a feature branch (feature/…) 🌿
+3. Open a PR with a clear description ✍️
+
+When filing issues include:
+- Steps to reproduce
+- Expected vs actual behavior
+- Screenshot / logs
 - OS / .NET SDK version
 
-Roadmap / TODO
---------------
-- [ ] Add unit tests for CalculatorEngine
-- [ ] Add memory functions (M+, M-, MR, MC)
-- [ ] Add history log that shows previous calculations
-- [ ] Implement keyboard-only mode and accessibility improvements
-- [ ] Improve styling and add dark theme
+Roadmap / TODO 📅
+-----------------
+- [ ] Unit tests for CalculatorEngine 🧪
+- [ ] Memory functions (M+, M-, MR, MC) 🧠
+- [ ] History log for previous calculations 🕘
+- [ ] Dark theme & improved styling 🌙
+- [ ] Accessibility improvements ♿
 
-License
--------
-No license file is currently included in the repository. If you want a permissive license, add a LICENSE file such as the MIT license:
+License 📝
+---------
+No LICENSE file is present yet. Suggested: MIT. Add a LICENSE file to publish terms.
 
-MIT License (example — add to LICENSE file)
+MIT License (example — create LICENSE file)
 ```
 MIT License
-
 Copyright (c) YEAR Achintha-999
-
-Permission is hereby granted, free of charge, to any person obtaining a copy...
+Permission is hereby granted, free of charge...
 ```
 
-Acknowledgements
-----------------
-- Built with .NET and Windows Forms
-- Example UI layout inspired by common calculator apps
+Acknowledgements 🙏
+------------------
+- Built with .NET & Windows Forms
+- Inspired by common mobile/desktop calculators
+- Thanks to anyone who tests, files issues, or contributes 🎉
 
-Contact
--------
+Contact 📬
+---------
 Project owner: Achintha-999 — https://github.com/Achintha-999
 
 ---
-
 
