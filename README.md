@@ -243,9 +243,4 @@ Project owner: Achintha-999 — https://github.com/Achintha-999
 
 ---
 
-Need a custom README variant? I can:
-- Add screenshots (if you upload images or point to existing assets)
-- Produce a smaller README for a release page
-- Generate a matching LICENSE file (MIT/Apache) and add it to the repo
-- Create a CONTRIBUTING.md and ISSUE_TEMPLATEs
 
