@@ -44,7 +44,7 @@ Screenshots / Demo 📸
 ---------------------
 Add screenshots to assets/ and replace the placeholder below:
 ![Calculator Screenshot](./image1.png)  
-(Drag your images into assets/ and update these links to show your UI.)
+
 
 Design & UI 🎨
 -------------
