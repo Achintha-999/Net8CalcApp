@@ -1,9 +1,8 @@
 # 🧮✨ Net8CalcApp — .NET 8 Calculator  🚀
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/Achintha-999/Net8CalcApp?color=blue)](https://github.com/Achintha-999/Net8CalcApp) 
-[![Language: C#](https://img.shields.io/badge/language-C%23-blue?logo=csharp)](https://docs.microsoft.com/dotnet/csharp/) 
-[[Platform: Windows](https://img.shields.io/badge/platform-windows-lightgrey?logo=windows)](https://www.microsoft.com/windows) 
-[![Target: .NET 8](https://img.shields.io/badge/.NET-8.0-512bd4?logo=.net)](https://dotnet.microsoft.com/) [![Issues](https://img.shields.io/github/issues/Achintha-999/Net8CalcApp)](https://github.com/Achintha-999/Net8CalcApp/issues)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Achintha-999/Net8CalcApp?color=blue)](https://github.com/Achintha-999/Net8CalcApp)  [![Language: C#](https://img.shields.io/badge/language-C%23-blue?logo=csharp)](https://docs.microsoft.com/dotnet/csharp/)  
+[![Platform: Windows](https://img.shields.io/badge/platform-windows-lightgrey?logo=windows)](https://www.microsoft.com/windows)  [![Target: .NET 8](https://img.shields.io/badge/.NET-8.0-512bd4?logo=.net)](https://dotnet.microsoft.com/)  
+[![Issues](https://img.shields.io/github/issues/Achintha-999/Net8CalcApp)](https://github.com/Achintha-999/Net8CalcApp/issues)
 
 ✨ A simple and intuitive calculator application built with C# and Windows Forms, targeting .NET 8.0. This project demonstrates basic arithmetic operations and a user-friendly interface for learning and practical use.
 
